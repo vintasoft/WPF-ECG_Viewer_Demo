@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="15.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E8F1FEF5-475D-4460-B127-041FAB54448A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WpfEcgViewerDemo</RootNamespace>
+    <AssemblyName>WpfEcgViewerDemo</AssemblyName>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <ApplicationIcon>App.ico</ApplicationIcon>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE; DEBUG</DefineConstants>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Optimize>false</Optimize>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Optimize>true</Optimize>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE; DEBUG</DefineConstants>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Optimize>false</Optimize>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Optimize>true</Optimize>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE; DEBUG</DefineConstants>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Optimize>false</Optimize>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Optimize>true</Optimize>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Vintasoft.Imaging">
+      <HintPath>..\..\..\..\Bin\DotNet4\AnyCPU\Vintasoft.Imaging.dll</HintPath>
+    </Reference>
+    <Reference Include="Vintasoft.Imaging.Gdi">
+      <HintPath>..\..\..\..\Bin\DotNet4\AnyCPU\Vintasoft.Imaging.Gdi.dll</HintPath>
+    </Reference>
+    <Reference Include="Vintasoft.Imaging.Dicom">
+      <HintPath>..\..\..\..\Bin\DotNet4\AnyCPU\Vintasoft.Imaging.Dicom.dll</HintPath>
+    </Reference>
+    <Reference Include="Vintasoft.Imaging.Dicom.Wpf.UI">
+      <HintPath>..\..\..\..\Bin\DotNet4\AnyCPU\Vintasoft.Imaging.Dicom.Wpf.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Vintasoft.Imaging.UI">
+      <HintPath>..\..\..\..\Bin\DotNet4\AnyCPU\Vintasoft.Imaging.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Vintasoft.Imaging.Wpf">
+      <HintPath>..\..\..\..\Bin\DotNet4\AnyCPU\Vintasoft.Imaging.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Vintasoft.Imaging.Wpf.UI">
+      <HintPath>..\..\..\..\Bin\DotNet4\AnyCPU\Vintasoft.Imaging.Wpf.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Vintasoft.Shared">
+      <HintPath>..\..\..\..\Bin\DotNet4\AnyCPU\Vintasoft.Shared.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="CustomControls\AnchorTypeEditorControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CustomControls\ColorPanelControl\ColorPanelControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CustomControls\ColorPickerDialog\ColorPickerDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CustomControls\FontFamilySelector.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CustomControls\NumericUpDown.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CustomControls\PaddingFEditorControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CustomControls\ThicknessEditorControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WpfDemosCommonCode.Imaging\ImageViewerToolbar\ImageViewerToolbar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WpfDemosCommonCode.Imaging\ImageViewer\ImageAppearanceSettingsWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WpfDemosCommonCode.Imaging\ImageViewer\ImageRenderingRequirementAddWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WpfDemosCommonCode.Imaging\ImageViewer\ImageRenderingRequirementsWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WpfDemosCommonCode.Imaging\ImageViewer\ImageViewerSettingsWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WpfDemosCommonCode.Imaging\RenderingSettingsWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WpfDemosCommonCode.Imaging\ThumbnailViewer\ThumbnailViewerSettingsWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WpfDemosCommonCode\WpfAboutBoxBaseWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="CustomControls\AnchorTypeEditorControl.xaml.cs">
+      <DependentUpon>AnchorTypeEditorControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\ColorPanelControl\ColorPanelControl.xaml.cs">
+      <DependentUpon>ColorPanelControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\ColorPickerDialog\ColorPicker.cs">
+    </Compile>
+    <Compile Include="CustomControls\ColorPickerDialog\ColorPickerDialog.xaml.cs">
+      <DependentUpon>ColorPickerDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\ColorPickerDialog\ColorThumb.cs">
+    </Compile>
+    <Compile Include="CustomControls\ColorPickerDialog\ColorUtilities.cs">
+    </Compile>
+    <Compile Include="CustomControls\ColorPickerDialog\HsvColor.cs">
+    </Compile>
+    <Compile Include="CustomControls\ColorPickerDialog\SpectrumSlider.cs">
+    </Compile>
+    <Compile Include="CustomControls\FontFamilySelector.xaml.cs">
+      <DependentUpon>FontFamilySelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\NumericUpDown.xaml.cs">
+      <DependentUpon>NumericUpDown.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\PaddingFEditorControl.xaml.cs">
+      <DependentUpon>PaddingFEditorControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\ThicknessEditorControl.xaml.cs">
+      <DependentUpon>ThicknessEditorControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WpfDemosCommonCode.Imaging\Codecs\CodecsFileFilters.cs">
+    </Compile>
+    <Compile Include="WpfDemosCommonCode.Imaging\ImageViewerToolbar\ImageViewerToolbar.xaml.cs">
+      <DependentUpon>ImageViewerToolbar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WpfDemosCommonCode.Imaging\ImageViewerToolbar\PageIndexChangedEventArgs.cs">
+    </Compile>
+    <Compile Include="WpfDemosCommonCode.Imaging\ImageViewer\ImageAppearanceSettingsWindow.xaml.cs">
+      <DependentUpon>ImageAppearanceSettingsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WpfDemosCommonCode.Imaging\ImageViewer\ImageRenderingRequirementAddWindow.xaml.cs">
+      <DependentUpon>ImageRenderingRequirementAddWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WpfDemosCommonCode.Imaging\ImageViewer\ImageRenderingRequirementsWindow.xaml.cs">
+      <DependentUpon>ImageRenderingRequirementsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WpfDemosCommonCode.Imaging\ImageViewer\ImageViewerSettingsWindow.xaml.cs">
+      <DependentUpon>ImageViewerSettingsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WpfDemosCommonCode.Imaging\RenderingSettingsWindow.xaml.cs">
+      <DependentUpon>RenderingSettingsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WpfDemosCommonCode.Imaging\ThumbnailViewer\ThumbnailViewerSettingsWindow.xaml.cs">
+      <DependentUpon>ThumbnailViewerSettingsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WpfDemosCommonCode\DemosTools.cs">
+    </Compile>
+    <Compile Include="WpfDemosCommonCode\WpfAboutBoxBaseWindow.xaml.cs">
+      <DependentUpon>WpfAboutBoxBaseWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <AppDesigner Include="Properties\" />
+    <Resource Include="App.ico" />
+    <Resource Include="WpfDemosCommonCode.Imaging\ImageViewerToolbar\Resources\camera.png">
+    </Resource>
+    <Resource Include="WpfDemosCommonCode.Imaging\ImageViewerToolbar\Resources\navigate_beginning.png">
+    </Resource>
+    <Resource Include="WpfDemosCommonCode.Imaging\ImageViewerToolbar\Resources\navigate_end.png">
+    </Resource>
+    <Resource Include="WpfDemosCommonCode.Imaging\ImageViewerToolbar\Resources\navigate_left.png">
+    </Resource>
+    <Resource Include="WpfDemosCommonCode.Imaging\ImageViewerToolbar\Resources\navigate_right.png">
+    </Resource>
+    <Resource Include="WpfDemosCommonCode.Imaging\ImageViewerToolbar\Resources\open.png">
+    </Resource>
+    <Resource Include="WpfDemosCommonCode.Imaging\ImageViewerToolbar\Resources\printer.png">
+    </Resource>
+    <Resource Include="WpfDemosCommonCode.Imaging\ImageViewerToolbar\Resources\save.png">
+    </Resource>
+    <Resource Include="WpfDemosCommonCode.Imaging\ImageViewerToolbar\Resources\scanner.png">
+    </Resource>
+    <Resource Include="WpfDemosCommonCode.Imaging\ImageViewerToolbar\Resources\zoom_in.png">
+    </Resource>
+    <Resource Include="WpfDemosCommonCode.Imaging\ImageViewerToolbar\Resources\zoom_out.png">
+    </Resource>
+    <Resource Include="WpfDemosCommonCode\Resources\VintasoftLogo.png">
+    </Resource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,110 @@
+﻿<Window x:Class="WpfEcgViewerDemo.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:cc="clr-namespace:WpfEcgViewerDemo"
+    xmlns:ImagingControls="clr-namespace:Vintasoft.Imaging.Wpf.UI;assembly=Vintasoft.Imaging.Wpf.UI"
+    xmlns:CustomConstrols="clr-namespace:WpfDemosCommonCode.Imaging"       
+    Title="VintaSoft WPF ECG Viewer Demo" 
+    Width="826" Height="670"
+    MinWidth="360" MinHeight="320"
+    WindowStartupLocation="CenterScreen"
+    Closed="Window_Closed">
+
+    <Window.CommandBindings>
+        <CommandBinding x:Name="openCommandBinding" Command="{x:Static cc:MainWindow._openCommand}" CanExecute="openCommandBinding_CanExecute" Executed="openMenuItem_Click"/>
+        <CommandBinding x:Name="saveCommandBinding" Command="{x:Static cc:MainWindow._saveCommand}" CanExecute="saveCommandBinding_CanExecute" Executed="saveMenuItem_Click"/>
+        <CommandBinding x:Name="closeCommandBinding" Command="{x:Static cc:MainWindow._closeCommand}" CanExecute="closeCommandBinding_CanExecute" Executed="closeMenuItem_Click"/>
+        <CommandBinding x:Name="printCommandBinding" Command="{x:Static cc:MainWindow._printCommand}" CanExecute="printCommandBinding_CanExecute" Executed="printMenuItem_Click"/>
+        <CommandBinding x:Name="exitCommandBinding" Command="{x:Static cc:MainWindow._exitCommand}" CanExecute="exitCommandBinding_CanExecute" Executed="exitMenuItem_Click"/>
+
+         <CommandBinding Command="{x:Static cc:MainWindow._aboutCommand}" Executed="aboutMenuItem_Click"/>
+    </Window.CommandBindings>
+
+    <Window.InputBindings>
+        <KeyBinding Command="{x:Static cc:MainWindow._openCommand}" Modifiers="CTRL" Key="O" />
+        <KeyBinding Command="{x:Static cc:MainWindow._saveCommand}" Modifiers="CTRL" Key="S" />
+        <KeyBinding Command="{x:Static cc:MainWindow._closeCommand}" Modifiers="CTRL" Key="W" />
+        <KeyBinding Command="{x:Static cc:MainWindow._printCommand}" Modifiers="CTRL" Key="P" />
+        <KeyBinding Command="{x:Static cc:MainWindow._exitCommand}" Modifiers="ALT" Key="X" />
+
+        <KeyBinding Command="{x:Static cc:MainWindow._aboutCommand}"  Key="F1" />
+    </Window.InputBindings>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Menu Grid.Row="0">
+            <MenuItem Header="File">
+                <MenuItem HeaderStringFormat="{}{0} (Ctrl+ O)" Header="Open..." Name="openMenuItem" Click="openMenuItem_Click"/>
+                <MenuItem HeaderStringFormat="{}{0} (Ctrl+ S)" Header="Save..." Name="saveMenuItem" Click="saveMenuItem_Click"/>
+                <MenuItem HeaderStringFormat="{}{0} (Ctrl+ W)" Header="Close" Name="closeMenuItem" Click="closeMenuItem_Click"/>
+                <Separator/>
+                <MenuItem HeaderStringFormat="{}{0} (Ctrl+ P)" Header="Print..." Name="printMenuItem" Click="printMenuItem_Click"/>
+                <Separator/>
+                <MenuItem HeaderStringFormat="{}{0} (Alt+ X)" Header="Exit" Name="exitMenuItem" Click="exitMenuItem_Click"/>
+            </MenuItem>
+
+            <MenuItem Header="View">
+                <MenuItem Header="Gain" Name="gainMenuItem">
+                    <MenuItem Header="5 mm/mV" Name="gain5mmMenuItem" Click="gainMenuItem_Click"/>
+                    <MenuItem Header="10 mm/mV" Name="gain10mmMenuItem" Click="gainMenuItem_Click"/>
+                    <MenuItem Header="20 mm/mV" Name="gain20mmMenuItem" Click="gainMenuItem_Click"/>
+                    <MenuItem Header="40 mm/mV" Name="gain40mmMenuItem" Click="gainMenuItem_Click"/>
+                </MenuItem>
+                <MenuItem Header="Grid Type" Name="gridTypeMenuItem">
+                    <MenuItem Header="None" Name="gridTypeNoneMenuItem" Click="gridTypeMenuItem_Click"/>
+                    <MenuItem Header="1 mm" Name="gridType1mmMenuItem" Click="gridTypeMenuItem_Click"/>
+                    <MenuItem Header="5 mm" Name="gridType5mmMenuItem" Click="gridTypeMenuItem_Click"/>
+                </MenuItem>
+                <MenuItem Header="Color" Name="colorMenuItem">
+                    <MenuItem Header="Red / Black" Name="colorRedBlackMenuItem" IsChecked="True" Click="colorMenuItem_Click"/>
+                    <MenuItem Header="Blue / Black" Name="colorBlueBlackMenuItem"  Click="colorMenuItem_Click"/>
+                    <MenuItem Header="Green / Black" Name="colorGreenBlackMenuItem"  Click="colorMenuItem_Click"/>
+                    <MenuItem Header="Gray / Green" Name="colorGrayGreenMenuItem"  Click="colorMenuItem_Click"/>
+                </MenuItem>
+                <MenuItem Header="Caliper" Name="caliperMenuItem">
+                    <MenuItem Header="Off" Name="caliperOffMenuItem" Click="caliperMenuItem_Click"/>
+                    <MenuItem Header="Duration" Name="caliperDurationMenuItem" Click="caliperMenuItem_Click"/>
+                    <MenuItem Header="Duration And μV" Name="caliperDurationAndMVMenuItem" Click="caliperMenuItem_Click"/>
+                </MenuItem>
+            </MenuItem>
+
+            <MenuItem Header="Help">
+                <MenuItem HeaderStringFormat="{}{0} (F1)" Header="About..." Name="aboutMenuItem" Click="aboutMenuItem_Click"/>
+            </MenuItem>
+        </Menu>
+
+        <CustomConstrols:ImageViewerToolBar Grid.Row="1" 
+                                            x:Name="imageViewerToolStrip1"
+                                            OpenFile="imageViewerToolStrip1_OpenFile"
+                                            SaveFile="imageViewerToolStrip1_SaveFile"
+                                            Print="imageViewerToolStrip1_Print"
+                                            />
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200" MinWidth="20"/>
+                <ColumnDefinition Width="*" MinWidth="20"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBox Grid.Column="0" TextWrapping="NoWrap" IsReadOnly="True" Name="fileMetadataTextBox" />
+            <GridSplitter Grid.Column="0" HorizontalAlignment="Right" Width="3" />
+
+            <ImagingControls:WpfImageViewer Grid.Column="1" 
+                                            x:Name="imageViewer1" 
+                                            Background="White" 
+                                            SizeMode="BestFit"                                            
+                                            InputGestureCopy="{x:Null}"
+                                            InputGestureCut="{x:Null}"
+                                            InputGestureDelete="{x:Null}"
+                                            InputGestureInsert="{x:Null}"/>
+        </Grid>
+
+        <TextBlock Grid.Row="3" Name="ecgVisualToolSelectionLabel"/>
+    </Grid>
+</Window>
