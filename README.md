@@ -19,7 +19,7 @@ This C# project uses <a href="https://www.vintasoft.com/vsimaging-dotnet-index.h
    dotnet build WpfEcgViewerDemo.Net10.csproj
    ```
 
-4. Run compiled application and try to view and annotate DICOM images.
+4. Run compiled application and try to preview electrocardiogram from DICOM file.
 
 
 ## Documentation
